@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CowCatVPN — Stay Connected in China</title>
+  <meta name="description" content="Traveling to China soon? Prepare your VPN and stay connected to your favorite apps. No web signup. Start in Telegram.">
+  <link rel="icon" href="assets/favicon.png">
+  <style>
+    :root {
+      --blue: #0a7aff;
+	  --logoblue: #1495E8;
+      --dark: #121826;
+      --text: #2b3445;
+      --muted: #6b7280;
+      --bg: #f5f7fa;
+      --radius: 14px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+    header {
+      background: var(--logoblue);
+      color: #fff;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    header img.logo { height: 44px; }
+    header .brand { font-weight: 700; letter-spacing: .3px; }
+    .wrap { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+    .hero { padding: 28px 0 10px; text-align: center; }
+    .hero img { width: 100%; border-radius: var(--radius); box-shadow: 0 10px 30px rgba(0,0,0,.08);}
+    h1 { font-size: clamp(28px, 4vw, 40px); margin: 14px 0 6px; }
+    p.lead { color: var(--muted); margin: 0 0 18px; }
+    .cta { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin: 20px 0 34px; }
+    .btn {
+      display: inline-block; padding: 14px 18px; border-radius: 10px; text-decoration: none; font-weight: 600;
+      transition: .2s; border: 2px solid transparent;
+    }
+    .btn.primary { background: var(--blue); color:#fff; }
+    .btn.secondary { background: #fff; color: var(--text); border-color: #e5e7eb; }
+    .btn:hover { transform: translateY(-1px); box-shadow: 0 6px 16px rgba(0,0,0,.08);}
+    .strip { margin: 20px 0 40px; }
+    .strip img { width: 100%; border-radius: var(--radius); }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(240px,1fr)); gap: 18px; margin: 34px 0; }
+    .card { background:#fff; padding: 18px; border-radius: var(--radius); box-shadow: 0 6px 20px rgba(0,0,0,.05); }
+    .muted { color: var(--muted); }
+    footer { text-align:center; color: var(--muted); padding: 34px 0 50px; }
+    .tiny { font-size: 12px; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap" style="display:flex; align-items:center; gap:14px;">
+      <img class="logo" src="assets/cowcat-logo.png" alt="CowCatVPN logo">
+      <div class="brand">CowCatVPN</div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <img src="assets/hero-banner.jpg" alt="Traveling to China soon banner">
+      <h1>Traveling to China soon?</h1>
+      <p class="lead">Some of your favorite apps won’t work there. Prepare your VPN before arrival and stay connected.</p>
+      <div class="cta">
+        <a class="btn primary" href="https://t.me/CowCatVPNbot" target="_blank">🚀 Start in Telegram Bot</a>
+        <a class="btn secondary" href="https://t.me/CowCatVPN" target="_blank">📢 Join Telegram Channel</a>
+      </div>
+    </section>
+
+
+    <section class="card">
+      <h3>How it works</h3>
+      <ol>
+        <li>Click “Start in Telegram Bot”.</li>
+        <li>Choose a plan or start a trial.</li>
+        <li>Get your server details instantly and connect.</li>
+      </ol>
+      <p class="tiny muted">Note: Always use VPNs in accordance with local laws and platform policies.</p>
+    </section>
+  </main>
+
+  <footer>
+    © 2025 CowCatVPN · Stay Connected Worldwide
+  </footer>
+</body>
+</html>
