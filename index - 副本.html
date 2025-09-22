@@ -9,7 +9,7 @@
   <style>
     :root {
       --blue: #0a7aff;
-      --logoblue: #1495E8;
+	  --logoblue: #1495E8;
       --dark: #121826;
       --text: #2b3445;
       --muted: #6b7280;
@@ -35,10 +35,9 @@
       z-index: 10;
     }
     header img.logo { height: 44px; }
-    header .brand { font-weight: 700; letter-spacing: .3px; }
+    header .brand { font-weight: 700; letter-spacing: .3px; font-size: 40px;   /* 新增的字号设置 */}
     .wrap { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
     .hero { padding: 28px 0 10px; text-align: center; }
-    .hero picture { display:block; }               /* 新增：确保 picture 占满一行 */
     .hero img { width: 100%; border-radius: var(--radius); box-shadow: 0 10px 30px rgba(0,0,0,.08);}
     h1 { font-size: clamp(28px, 4vw, 40px); margin: 14px 0 6px; }
     p.lead { color: var(--muted); margin: 0 0 18px; }
@@ -69,12 +68,7 @@
 
   <main class="wrap">
     <section class="hero">
-      <!-- 改动：使用 picture 在手机上切换为移动图 -->
-      <picture>
-        <source srcset="assets/hero-banner-mobile.jpg" media="(max-width: 767px)">
-        <img src="assets/hero-banner.jpg" alt="Traveling to China soon banner" loading="lazy">
-      </picture>
-
+      <img src="assets/hero-banner.jpg" alt="Traveling to China soon banner">
       <h1>Traveling to China soon?</h1>
       <p class="lead">Some of your favorite apps won’t work there. Prepare your VPN before arrival and stay connected.</p>
       <div class="cta">
@@ -82,6 +76,7 @@
         <a class="btn secondary" href="https://t.me/CowCatVPN" target="_blank">📢 Join Telegram Channel</a>
       </div>
     </section>
+
 
     <section class="card">
       <h3>How it works</h3>
