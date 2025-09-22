@@ -64,10 +64,14 @@
 	  header img.logo { height: 36px; }  /* 可选：略缩小 logo，高度自定 */
 	}
 	
-	/* Mobile：将 hero 顶部内边距减至当前的 50% */
+	/* Mobile：缩小 hero 与父容器 wrap 的上下距离 */
 	@media (max-width: 767px) {
-	  .hero { padding: 14px; }  /* 原来 28px → 14px */
+	  .hero {
+		margin-block: 8px;      /* 上/下外边距：与 wrap 的距离（可改成你想要的数值） */
+		padding-block: 8px;    /* 可选：同时缩小内部上下留白（原 28px/10px） */
+	  }
 	}
+
 
 
   </style>
