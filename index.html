@@ -57,6 +57,13 @@
     .muted { color: var(--muted); }
     footer { text-align:center; color: var(--muted); padding: 34px 0 50px; }
     .tiny { font-size: 12px; }
+	
+	/* Mobile: 减小 header 上下内边距（保持左右不变），可选缩小 logo */
+	@media (max-width: 767px) {
+	  header { padding: 8px 24px; }      /* 原来 16px 24px → 8px 24px */
+	  header img.logo { height: 36px; }  /* 可选：略缩小 logo，高度自定 */
+	}
+
   </style>
 </head>
 <body>
