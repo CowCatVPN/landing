@@ -29,7 +29,7 @@
       padding: 8px 24px;
       display: flex;
       align-items: center;
-      justify-content: space-between; /* 改为两端对齐 */
+      justify-content: space-between;
       position: sticky;
       top: 0;
       z-index: 10;
@@ -109,7 +109,7 @@
       <h1 id="title">Traveling to China soon?</h1>
       <p class="lead" id="subtitle">Some of your favorite apps won’t work there. Prepare your VPN before arrival and stay connected.</p>
       <div class="cta">
-        <a class="btn primary" id="btn-bot" href="https://t.me/CowCatVPNbot" target="_blank">🚀 Start in Telegram Bot</a>
+        <a class="btn primary" id="btn-bot" target="_blank">🚀 Start in Telegram Bot</a>
         <a class="btn secondary" id="btn-channel" href="https://t.me/CowCatVPN" target="_blank">📢 Join Telegram Channel</a>
       </div>
     </section>
@@ -163,16 +163,18 @@
 
   function getLang() {
     const params = new URLSearchParams(window.location.search);
-    return params.get("lang") || "en";
+    return params.get("lang") || "en"; // 默认英文
   }
 
   function applyLang(lang) {
     const t = translations[lang] || translations.en;
+
     document.getElementById("title").textContent = t.title;
     document.getElementById("subtitle").textContent = t.subtitle;
     document.getElementById("btn-bot").textContent = t.btnBot;
     document.getElementById("btn-channel").textContent = t.btnChannel;
     document.getElementById("how-title").textContent = t.howTitle;
+
     const list = document.getElementById("how-list");
     list.innerHTML = "";
     t.howList.forEach(item => {
@@ -180,8 +182,17 @@
       li.textContent = item;
       list.appendChild(li);
     });
+
     document.getElementById("note").textContent = t.note;
     document.getElementById("footer").textContent = t.footer;
+
+    // 🔑 动态修改按钮链接
+    const botBtn = document.getElementById("btn-bot");
+    if (lang === "zh") {
+      botBtn.href = "https://t.me/CowCatVPNbot?start=zh_googleads";
+    } else {
+      botBtn.href = "https://t.me/CowCatVPNbot?start=en_googleads";
+    }
   }
 
   function switchLang(lang) {
