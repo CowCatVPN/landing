@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CowCatVPN1 — 在中国依然畅连</title>
+  <title>CowCatVPN — 在中国依然畅连</title>
   <meta name="description" content="即将前往中国？提前准备好 VPN，轻松访问常用应用。无需网页注册，直接在 Telegram 开始。">
   <link rel="icon" href="assets/favicon.png">
   <style>
@@ -154,7 +154,8 @@
         "Get your server details instantly and connect."
       ],
       note: "Note: Always use VPNs in accordance with local laws and platform policies.",
-      footer: "© 2025 CowCatVPN · Stay Connected Worldwide"
+      footer: "© 2025 CowCatVPN · Stay Connected Worldwide",
+      pageTitleSuffix: "Stay connected in China"
     },
     zh: {
       title: "即将前往中国？",
@@ -168,7 +169,8 @@
         "立即获取服务器信息并连接。"
       ],
       note: "注意：请在遵守当地法律与平台政策的前提下使用 VPN。",
-      footer: "© 2025 CowCatVPN · 畅连全球"
+      footer: "© 2025 CowCatVPN · 畅连全球",
+      pageTitleSuffix: "在中国依然畅连"
     }
   };
 
@@ -181,6 +183,7 @@
     const t = translations[lang] || translations.en;
 
     document.documentElement.lang = lang;
+    document.title = `CowCatVPN — ${t.pageTitleSuffix || "在中国依然畅连"}`;
 
     document.getElementById("title").textContent = t.title;
     document.getElementById("subtitle").textContent = t.subtitle;
@@ -210,7 +213,11 @@
 
   function switchLang(lang) {
     const url = new URL(window.location);
-    url.searchParams.set("lang", lang);
+    if (lang === "zh") {
+      url.searchParams.delete("lang");
+    } else {
+      url.searchParams.set("lang", lang);
+    }
     window.location = url.toString();
   }
 
